@@ -1,7 +1,4 @@
-.head {
-  display: flex;
-}
-#intro {
+#bottom-nav {
   background-color: darkgrey;
   height: 20px 0px;
   background-repeat: no-repeat;
@@ -13,17 +10,26 @@
   padding: 20px 35px;
   padding-bottom: 20px;
 }
-
+#top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav .dropdown > a {
+  text-decoration: none;
+  color: black;
+  gap: 20px;
+}
 .dropdown {
   position: relative;
   display: inline-block;
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #bc0ced;
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -31,38 +37,59 @@
   color: black;
 }
 .dropdown-content a {
-  color: black;
+  color: rgb(251, 250, 250);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  color: black;
 }
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .button {
   background-color: #fcfcfc;
-  color: rgb(6, 6, 6); /* White text */
-  padding: 12px 24px; /* Adjust padding */
-  font-size: 16px; /* Font size */
+  color: rgb(6, 6, 6);
+  padding: 12px 24px;
+  font-size: 16px;
   font-weight: bold;
-  border: none; /* Remove default border */
-  border-radius: 50px; /* Rounded corners */
-  cursor: pointer; /* Pointer on hover */
-  transition: all 0.3s ease-in-out; /* Smooth hover effect */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
+.buttons {
+  background-color: none;
+  color: rgb(6, 6, 6);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
 .button:hover {
   font-weight: bold;
-  transform: scale(1.05); /* Slightly enlarge */
+  transform: scale(1.05);
+  background-color: aquamarine;
+  color: white;
+}
+.buttons:hover {
+  background-color: transparent;
+  border: black;
 }
 .action-buttons {
   text-decoration: none;
   color: black;
   border-radius: none;
-  background-color: white;
+  background-color: none;
 }
 #body {
   background-image: url(./images/1\ image.jpg);
@@ -79,56 +106,31 @@
   text-align: left;
   font-size: larger;
 }
-.buttons:hover {
-  background-color: #0056b3;
-}
 
-#intro a {
+#bottom-nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
   margin-left: 15px;
 }
 
-/* BODY SECTION */
 #body {
   display: flex;
-  justify-content: flex-start; /* Moves text to the right */
+  justify-content: flex-start;
   align-items: center;
-  height: 50vh; /* Adjust height as needed */
+  height: 50vh;
   padding: 20px;
   text-align: right;
 }
 
 #body h1 {
-  font-size: 3em; /* Larger heading */
+  font-size: 3em;
   font-weight: bold;
 }
 
 #body p {
   font-size: 1.2em;
   color: white;
-}
-.mid {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center;
-  padding: 40px; /* Add some spacing */
-}
-
-/* Ensure images inside .mid are also centered */
-.mid img {
-  max-width: 100%; /* Make sure the image is responsive */
-  height: auto;
-  margin: 10px 0; /* Add spacing */
-}
-
-/* Additional spacing for better layout */
-.mid h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
 }
 
 * {
@@ -142,20 +144,18 @@ body {
 
 header {
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 header img {
   height: 40px;
 }
-.intro {
+.bottom-nav {
   background-image: url("./1\ image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   align-items: center;
   padding: 20px 35px;
@@ -170,12 +170,70 @@ header img {
   align-items: center;
   gap: 7px;
 }
-.intro h1 {
+.bottom-nav h1 {
   font-size: 58px;
   margin: 20px 0px;
 }
-.intro p {
+.bottom-nav p {
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0px;
+}
+.mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  font-size: 30px;
+  color: grey;
+}
+
+.mid img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.mid h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.Benefits {
+  display: flex;
+  align-items: center;
+  background-color: grey;
+  padding: 20px;
+  gap: 40px;
+}
+
+.Benefits .benefits-image {
+  flex: 1;
+}
+.Benefits .benefits-image img {
+  width: 100%;
+}
+.Benefits .content {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.Benefits h2 {
+  margin-bottom: 10px;
+}
+
+.Benefits p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Benefits .content img {
+  height: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.Benefits p img:hover {
+  fill: #604d8d;
 }
