@@ -1,57 +1,92 @@
-#bottom-nav {
-  background-color: darkgrey;
-  height: 20px 0px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  padding: 20px 35px;
-  padding-bottom: 20px;
+body,
+h1,
+p,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
+#head {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
 #top-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
-nav .dropdown > a {
-  text-decoration: none;
-  color: black;
+
+#top-nav img {
+  height: 50px;
+}
+
+#top-nav nav {
+  display: flex;
   gap: 20px;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+.dropdown > a {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #bc0ced;
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  text-decoration: none;
-  color: black;
 }
+
 .dropdown-content a {
-  color: rgb(251, 250, 250);
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   background-color: #f1f1f1;
   color: black;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+#bottom-nav {
+  background-color: darkgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 35px;
+}
+
+#bottom-nav nav {
+  display: flex;
+  gap: 20px;
+}
+
+#bottom-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
 .button {
   background-color: #fcfcfc;
-  color: rgb(6, 6, 6);
+  color: black;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
@@ -60,67 +95,45 @@ nav .dropdown > a {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-}
-.buttons {
-  background-color: none;
-  color: rgb(6, 6, 6);
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
 }
 
 .button:hover {
-  font-weight: bold;
   transform: scale(1.05);
-  background-color: aquamarine;
+  background-color: rgb(0, 6, 4);
   color: white;
 }
-.buttons:hover {
+
+.buttons {
   background-color: transparent;
-  border: black;
-}
-.action-buttons {
-  text-decoration: none;
   color: black;
-  border-radius: none;
-  background-color: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+
+.buttons:hover {
+  background-color: black;
+  color: white;
+}
+
 #body {
   background-image: url(./images/1\ image.jpg);
   height: 50vh;
-  font-weight: bolder;
   background-size: cover;
   background-position: center;
   display: flex;
-  text-align: left;
-  margin-left: 20px;
-  justify-content: right;
-  align-items: start;
-  color: white;
-  text-align: left;
-  font-size: larger;
-}
-
-#bottom-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  margin-left: 15px;
-}
-
-#body {
-  display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 50vh;
   padding: 20px;
-  text-align: right;
+  color: white;
+}
+
+#body .text {
+  max-width: 600px;
 }
 
 #body h1 {
@@ -130,55 +143,9 @@ nav .dropdown > a {
 
 #body p {
   font-size: 1.2em;
-  color: white;
+  margin: 10px 0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: sans-serif;
-}
-
-header {
-  padding: 20px;
-}
-
-header img {
-  height: 40px;
-}
-.bottom-nav {
-  background-image: url("./1\ image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
-  padding: 20px 35px;
-  padding-bottom: 80px;
-}
-.action-buttons button {
-  border: none;
-  background: transparent;
-  font-size: 18px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.bottom-nav h1 {
-  font-size: 58px;
-  margin: 20px 0px;
-}
-.bottom-nav p {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px 0px;
-}
 .mid {
   display: flex;
   flex-direction: column;
@@ -186,8 +153,13 @@ header img {
   align-items: center;
   text-align: center;
   padding: 40px;
-  font-size: 30px;
   color: grey;
+  text-wrap: wrap;
+}
+
+.mid h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .mid img {
@@ -196,14 +168,10 @@ header img {
   margin: 10px 0;
 }
 
-.mid h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
 .Benefits {
   display: flex;
   align-items: center;
-  background-color: grey;
+  background-color: rgba(168, 225, 247, 0.448);
   padding: 20px;
   gap: 40px;
 }
@@ -211,29 +179,123 @@ header img {
 .Benefits .benefits-image {
   flex: 1;
 }
+
 .Benefits .benefits-image img {
   width: 100%;
 }
+
 .Benefits .content {
   flex: 1;
-  justify-content: space-between;
 }
 
 .Benefits h2 {
   margin-bottom: 10px;
+  padding: 20px 0px;
 }
 
 .Benefits p {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  padding: 30px 0px;
+  font-weight: bold;
 }
 
 .Benefits .content img {
-  height: 50px;
+  height: auto;
+
+  border-radius: 50%;
+}
+.Benefits .content img:hover {
+  background-color: #9a0bc5;
+}
+
+#btn {
+  background-color: transparent;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#btn:hover {
+  background-color: #9a0bc5;
+}
+.Tasker {
+  display: flex;
+  align-items: center;
+  background-color: rgb(40, 40, 100);
+  padding: 20px;
+  gap: 40px;
+  color: white;
+}
+
+.Tasker .Tasker-content {
+  flex: 1;
+}
+
+.Tasker .Tasker-content h2 {
+  margin-bottom: 10px;
+  padding: 20px 0px;
+}
+
+.Tasker .Tasker-content p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+  font-weight: bold;
+}
+
+.Tasker .Tasker-content img {
+  height: auto;
+}
+
+.Tasker .Tasker-content img:hover {
+  transform: scale(1.1);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.Benefits p img:hover {
-  fill: #604d8d;
+.Tasker .Tasker-image {
+  flex: 1;
+}
+
+.Tasker .Tasker-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#button {
+  background-color: transparent;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 2px solid white;
+}
+
+#button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s ease;
+}
+.Download {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  color: grey;
+}
+
+.Download .Download-image img {
+  justify-content: space-between;
 }
